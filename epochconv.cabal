@@ -6,16 +6,16 @@ license:             BSD3
 license-file:        LICENSE
 author:              Dino Morelli
 maintainer:          dino@ui3.info
--- copyright:           
+copyright:           2014 Dino Morelli
 category:            Application, Console
 build-type:          Simple
--- extra-source-files:  
+extra-source-files:  TODO
+                     util/prefs/boring
 cabal-version:       >=1.10
 
 executable epochconv
   main-is:             epochconv.hs
   -- other-modules:       
-  -- other-extensions:    
   build-depends:       base >=4.7 && <4.8,
                        old-locale,
                        time
