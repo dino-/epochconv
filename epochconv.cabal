@@ -1,7 +1,7 @@
 name:                epochconv
 version:             1.0
-synopsis:            Show a given date (or the current date) in a variety of formats
--- description:         
+synopsis:            Convert between epoch and various date formats
+description:         Show a given date (or the current date) in a variety of formats. This was partly an exercise in grokking the Haskell date/time APIs.
 license:             BSD3
 license-file:        LICENSE
 author:              Dino Morelli
@@ -15,7 +15,6 @@ cabal-version:       >=1.10
 
 executable epochconv
   main-is:             epochconv.hs
-  -- other-modules:       
   build-depends:       base >=4.7 && <4.8,
                        old-locale,
                        time
