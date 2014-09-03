@@ -63,15 +63,15 @@ usage = do
       , "If no date is given, the current date/time will be used."
       , "The -e and -f options are mostly unnecessary. -m is needed to"
       , "disambiguate between epoch and milliseconds."
-      , ""                                                 
+      , ""
       , "Parsable input formats for -f:"
       ]
       ++ (map (\fp -> "   " ++ fmt fp now) formatPatterns) ++
-      [ ""                                                 
-      , "Output will be the date/time in a variety of formats, both localized"                                                 
+      [ ""
+      , "Output will be the date/time in a variety of formats, both localized"
       , "and UTC, as well as epoch and milliseconds."
-      , ""                                                 
-      , "Version " ++ (showVersion version) ++ "  Dino Morelli <dino@ui3.info>"                     
+      , ""
+      , "Version " ++ (showVersion version) ++ "  Dino Morelli <dino@ui3.info>"
       ]
 
 
