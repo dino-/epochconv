@@ -10,6 +10,8 @@ import Data.Time
    )
 import Data.Time.Clock.POSIX
    ( posixSecondsToUTCTime, utcTimeToPOSIXSeconds )
+import Data.Version ( showVersion )
+import Paths_epochconv ( version )
 import System.Environment ( getArgs, getProgName )
 import System.Exit ( exitFailure, exitSuccess )
 import System.Locale ( defaultTimeLocale )
@@ -69,7 +71,7 @@ usage = do
       , "Output will be the date/time in a variety of formats, both localized"                                                 
       , "and UTC, as well as epoch and milliseconds."
       , ""                                                 
-      , "Dino Morelli <dino@ui3.info>"                     
+      , "Version " ++ (showVersion version) ++ "  Dino Morelli <dino@ui3.info>"                     
       ]
 
 
