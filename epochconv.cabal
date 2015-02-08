@@ -9,7 +9,8 @@ maintainer:          dino@ui3.info
 copyright:           2014 Dino Morelli
 category:            Application, Console
 build-type:          Simple
-extra-source-files:  TODO
+extra-source-files:  README.md
+                     TODO
                      util/prefs/boring
 cabal-version:       >=1.10
 
