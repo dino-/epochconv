@@ -1,0 +1,32 @@
+name: epochconv
+version: '1.0'
+license: BSD3
+copyright: 2014 Dino Morelli
+author: Dino Morelli
+maintainer: dino@ui3.info
+synopsis: Convert between epoch and various date formats
+description: Show a given date (or the current date) in a variety of formats. This was partly an exercise in grokking the Haskell date/time APIs.
+category: Application, Console
+
+extra-source-files:
+- .gitignore
+- package.yaml
+- README.md
+- stack.yaml
+- TODO
+
+ghc-options:
+- -fwarn-tabs
+- -Wall
+- -Wcompat
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wredundant-constraints
+
+executables:
+  epochconv:
+    source-dirs: src
+    main: epochconv.hs
+    dependencies:
+    - base >= 4.7 && < 5.0
+    - time
