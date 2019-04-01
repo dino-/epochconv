@@ -1,0 +1,6 @@
+[Desktop Entry]
+Categories=Utility;ConsoleOnly;
+Type=Application
+Icon=epochconv
+Exec=epochconv
+Name=epochconv
