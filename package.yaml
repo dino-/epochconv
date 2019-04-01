@@ -1,7 +1,7 @@
 name: epochconv
 version: '1.0'
-license: BSD3
-copyright: 2014 Dino Morelli
+license: ISC
+copyright: 2014-2019 Dino Morelli
 author: Dino Morelli
 maintainer: dino@ui3.info
 synopsis: Convert between epoch and various date formats
