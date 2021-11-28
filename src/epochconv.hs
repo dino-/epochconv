@@ -1,4 +1,9 @@
+#! /usr/bin/env stack
+{- stack runghc -}
+
+{- No stack? Use this #! instead of the two lines above:
 #! /usr/bin/env runhaskell
+-}
 
 {- # OPTIONS_GHC -fno-warn-type-defaults #-}
 
