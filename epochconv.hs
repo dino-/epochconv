@@ -7,7 +7,7 @@
 
 {-# OPTIONS_GHC -fno-warn-type-defaults #-}
 
-import Control.Monad ( mplus )
+import Data.Monoid ( First (..), getFirst )
 import Data.Time
   ( FormatTime, ParseTime, UTCTime
   , formatTime, getCurrentTime, parseTimeM, utcToLocalZonedTime
@@ -105,7 +105,7 @@ strToUTCTime divisor = Right . posixSecondsToUTCTime . realToFrac
 
 parseDateString :: String -> Either String UTCTime
 parseDateString s = maybe (Left $ printf "Unable to parse \"%s\"" s)
-  Right $ foldl mplus Nothing $ map ($ s) parsers
+  Right (getFirst . mconcat . map (\parser -> First . parser $ s) $ parsers)
 
 
 rfc5322Date, iso1601Offset, iso1601Zulu :: String
