@@ -5,7 +5,7 @@
 #! /usr/bin/env runhaskell
 -}
 
-{- # OPTIONS_GHC -fno-warn-type-defaults #-}
+{-# OPTIONS_GHC -fno-warn-type-defaults #-}
 
 import Control.Monad ( mplus )
 import Data.Time
