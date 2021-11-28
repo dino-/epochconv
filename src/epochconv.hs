@@ -15,27 +15,28 @@ import System.Exit ( exitFailure, exitSuccess )
 import Text.Printf ( printf )
 
 
-{- Some important points:
+{-
+  Some important points:
 
-   POSIXTime is basically this: secs-since-epoch.picoseconds
-   as a fractional number
+  POSIXTime is basically this: secs-since-epoch.picoseconds
+  as a fractional number
 
-   By using round on it, you can strip off the picos getting what
-   we all know as epoch time. Type annotation (Int or Integer)
-   may be required. Like this:
+  By using round on it, you can strip off the picos getting what
+  we all know as epoch time. Type annotation (Int or Integer)
+  may be required. Like this:
 
-      epoch = round . utcTimeToPOSIXSeconds $ someUTCTime
+    epoch = round . utcTimeToPOSIXSeconds $ someUTCTime
 
-   If you just need a String you can use parseTimeM with "%s"
-   for format string:
+  If you just need a String you can use parseTimeM with "%s"
+  for format string:
 
-      epochAsString = formatTime defaultTimeLocale "%s" someUTCTime
+    epochAsString = formatTime defaultTimeLocale "%s" someUTCTime
 
-   But UTCTime is the low-level format that everything uses in the
-   Haskell APIs
+  But UTCTime is the low-level format that everything uses in the
+  Haskell APIs
 
-   Functions for converting between the two are in
-   Data.Time.Clock.POSIX
+  Functions for converting between the two are in
+  Data.Time.Clock.POSIX
 -}
 
 
@@ -52,32 +53,32 @@ parseInput as         = pure . parseInput' $ as
 
 usage :: IO String
 usage = do
-   appName <- getProgName
-   now <- getCurrentTime
-   pure $ unlines $
-      [ "Show a given date (or the current date) in a variety of formats"
-      , ""
-      , "Usage: " <> appName <> " [OPTION] [DATE]"
-      , ""
-      , "Options:"
-      , "  -e          Input is epoch (seconds since 1970-01-01)"
-      , "  -m          Input is milliseconds (since 1970-01-01)"
-      , "  -f          Input is a human-readable date"
-      , "  -h, --help  This usage information"
-      , ""
-      , "If no date is given, the current date/time will be used."
-      , "The -e and -f options are mostly unnecessary. -m is needed to"
-      , "determine whether a long number is epoch or milliseconds."
-      , ""
-      , "Parsable input formats for -f:"
-      ]
-      <> map (\fp -> "  " <> fmt fp now) formatPatterns <>
-      [ ""
-      , "Output will be the date/time in a variety of formats, both localized"
-      , "and UTC, as well as epoch and milliseconds."
-      , ""
-      , "Version 1.x  Dino Morelli <dino@ui3.info>"
-      ]
+  appName <- getProgName
+  now <- getCurrentTime
+  pure $ unlines $
+    [ "Show a given date (or the current date) in a variety of formats"
+    , ""
+    , "Usage: " <> appName <> " [OPTION] [DATE]"
+    , ""
+    , "Options:"
+    , "  -e          Input is epoch (seconds since 1970-01-01)"
+    , "  -m          Input is milliseconds (since 1970-01-01)"
+    , "  -f          Input is a human-readable date"
+    , "  -h, --help  This usage information"
+    , ""
+    , "If no date is given, the current date/time will be used."
+    , "The -e and -f options are mostly unnecessary. -m is needed to"
+    , "determine whether a long number is epoch or milliseconds."
+    , ""
+    , "Parsable input formats for -f:"
+    ]
+    <> map (\fp -> "  " <> fmt fp now) formatPatterns <>
+    [ ""
+    , "Output will be the date/time in a variety of formats, both localized"
+    , "and UTC, as well as epoch and milliseconds."
+    , ""
+    , "Version 1.x  Dino Morelli <dino@ui3.info>"
+    ]
 
 
 parseInput' :: [String] -> Either String UTCTime
