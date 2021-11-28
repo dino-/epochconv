@@ -14,7 +14,6 @@ extra-source-files:
 - README.md
 - stack.yaml
 - stack.yaml.lock
-- TODO
 
 ghc-options:
 - -fwarn-tabs
