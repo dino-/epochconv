@@ -9,6 +9,7 @@ description: Show a given date (or the current date) in a variety of formats. Th
 category: Application, Console
 
 extra-source-files:
+- changelog.md
 - .gitignore
 - hsinstall/share/icons/hicolor/scalable/apps/epochconv.svg
 - hsinstall/share/applications/epochconv.desktop
