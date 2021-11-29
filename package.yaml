@@ -26,6 +26,8 @@ ghc-options:
 - -Wincomplete-uni-patterns
 - -Wredundant-constraints
 
+# Hey! epochconv.hs is a *script*, you don't have to build it unless
+# you want to have a binary!
 executables:
   epochconv:
     source-dirs: .
