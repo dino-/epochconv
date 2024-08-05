@@ -108,22 +108,22 @@ parseDateString s = maybe (Left $ printf "Unable to parse \"%s\"" s)
   Right (getFirst . mconcat . map (\parser -> First . parser $ s) $ parsers)
 
 
-rfc5322Date, iso1601Offset, iso1601Zulu :: String
+rfc5322Date, iso8601Offset, iso8601Zulu :: String
 
 -- Fri, 21 Nov 1997 10:55:06 -0500
 rfc5322Date = "%a, %d %b %Y %T %z"
 -- 1997-11-21T10:55:06-0500
-iso1601Offset = "%FT%T%z"
+iso8601Offset = "%FT%T%z"
 -- 1997-11-21T15:55:06Z
-iso1601Zulu = "%FT%TZ"
+iso8601Zulu = "%FT%TZ"
 
 
 formatPatterns :: [String]
 formatPatterns =
   [ "%c"
   , rfc5322Date
-  , iso1601Offset
-  , iso1601Zulu
+  , iso8601Offset
+  , iso8601Zulu
   , "%F"
   ]
 
@@ -143,8 +143,8 @@ output (Right ut) = do
 
   putStrLn $ "     RFC5322: " <> fmt rfc5322Date local
 
-  printf "\n %s ISO1601: %s\n" (fmt "%Z" local) (fmt iso1601Offset local)
-  putStrLn $ " UTC ISO1601: " <> fmt iso1601Zulu ut
+  printf "\n %s ISO8601: %s\n" (fmt "%Z" local) (fmt iso8601Offset local)
+  putStrLn $ " UTC ISO8601: " <> fmt iso8601Zulu ut
 
   putStrLn $ "\n   Unix time: " <> fmt "%s" ut
   putStrLn $ "milliseconds: " <>
