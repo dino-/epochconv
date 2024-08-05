@@ -1,3 +1,16 @@
+1.5 (2024-08-05)
+
+  * Removed license end-date
+  * Changed version to 1.5
+  * Changed all mention of ISO1601 to ISO8601
+  * Added notice that this project is a script
+  * Using First Monoid instead of foldl mplus
+  * Removed Setup.hs and TODO files
+  * Added back GHC option -fno-warn-type-defaults
+  * Moved the epochconv.hs source file into the project root
+  * Put the #! script start block back
+
+
 1.4 (2021-11-29)
 
   * Merged recent changes from scripts/epochconv.hs
