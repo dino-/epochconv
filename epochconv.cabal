@@ -1,0 +1,41 @@
+cabal-version: 2.2
+
+name: epochconv
+version: 1.6
+synopsis: Convert between epoch and various date formats
+description: Show a given date (or the current date) in a variety of formats.
+  This was partly an exercise in grokking the Haskell date/time APIs.
+category: Application, Console
+author: Dino Morelli
+maintainer: dino@ui3.info
+copyright: 2014 Dino Morelli
+license: ISC
+license-file: LICENSE
+build-type: Simple
+extra-source-files:
+    changelog.md
+    .gitignore
+    hsinstall/share/icons/hicolor/scalable/apps/epochconv.svg
+    hsinstall/share/applications/epochconv.desktop
+    README.md
+    stack.yaml
+    stack.yaml.lock
+
+executable epochconv
+  main-is: epochconv.hs
+  other-modules:
+      Paths_epochconv
+  hs-source-dirs:
+      ./
+  ghc-options:
+    -fwarn-tabs
+    -Wall
+    -Wcompat
+    -Wincomplete-record-updates
+    -Wincomplete-uni-patterns
+    -Wpartial-fields
+    -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5.0
+    , time
+  default-language: Haskell2010
