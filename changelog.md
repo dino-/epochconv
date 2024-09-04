@@ -1,3 +1,9 @@
+1.6 (2024-09-04)
+
+  * Switched from hpack to cabal file
+  * Changed version to 1.6
+  * Added a format for RFC5322 without the zero-padded day
+
 1.5 (2024-08-05)
 
   * Removed license end-date
