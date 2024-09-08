@@ -108,15 +108,13 @@ parseDateString s = maybe (Left $ printf "Unable to parse \"%s\"" s)
   Right (getFirst . mconcat . map (\parser -> First . parser $ s) $ parsers)
 
 
-rfc5322Date, rfc5322DateNoZeroPad, iso8601Offset, iso8601Zulu :: String
+rfc5322Date, iso8601Offset, iso8601Zulu :: String
 
--- Fri, 09 Nov 1997 10:55:06 -0500
-rfc5322Date = "%a, %d %b %Y %T %z"
--- Fri, 9 Nov 1997 10:55:06 -0500
-rfc5322DateNoZeroPad = "%a, %e %b %Y %T %z"
--- 1997-11-09T10:55:06-0500
+-- Fri, 21 Nov 1997 10:55:06 -0500
+rfc5322Date = "%a, %-d %b %Y %T %z"
+-- 1997-11-21T10:55:06-0500
 iso8601Offset = "%FT%T%z"
--- 1997-11-09T15:55:06Z
+-- 1997-11-21T15:55:06Z
 iso8601Zulu = "%FT%TZ"
 
 
@@ -124,7 +122,6 @@ formatPatterns :: [String]
 formatPatterns =
   [ "%c"
   , rfc5322Date
-  , rfc5322DateNoZeroPad
   , iso8601Offset
   , iso8601Zulu
   , "%F"

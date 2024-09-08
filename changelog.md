@@ -2,7 +2,7 @@
 
   * Switched from hpack to cabal file
   * Changed version to 1.6
-  * Added a format for RFC5322 without the zero-padded day
+  * Adjusted for parsing format for RFC5322 to handle zero- or space-padded day-of-month
 
 1.5 (2024-08-05)
 
